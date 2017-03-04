@@ -1,5 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
 # generic
 unset abort_nosubject
   set abort_unmodified
@@ -27,8 +25,8 @@ unset bounce_delivered
   set envelope_from
 # set escape = "~"
   set fast_reply
-  set fcc_attach		# save fcc attachments along with the body
-unset fcc_clear			# save fcc crypted and signed (if applicable)
+  set fcc_attach        # save fcc attachments along with the body
+unset fcc_clear            # save fcc crypted and signed (if applicable)
 # set folder = ~/.maildir
   set followup_to
 unset forward_decode
@@ -46,7 +44,7 @@ unset ignore_linear_white_space
   set implicit_autoview
   set include
   set indent_string = "> "
-  set locale = "de_DE"
+# set locale = "de_DE"
   set mail_check = 5
   set mailcap_path = "~/.mutt/default/mailcap"
 # set mailcap_sanitize
@@ -65,7 +63,7 @@ unset move
   set pager_stop
 unset pipe_decode
   set pipe_sep = "\n"
-  set pipe_split  
+  set pipe_split
 unset post_indent_string
   set postpone = ask-no
   set postponed = +.Postponed
@@ -90,9 +88,9 @@ unset save_name
   set header_cache = "~/.mutt/hcache"
   set sig_dashes
   set smart_wrap
-  set smileys = "(>From )|(:[-^]?[][)(><}{|/DP])"		# quoting
+  set smileys = "(>From )|(:[-^]?[][)(><}{|/DP])"        # quoting
   set sort_alias = alias
-  set sort_browser = alpha								# reverse-last-date
+  set sort_browser = alpha                                # reverse-last-date
 unset sort_re
   set spoolfile = +
   set status_on_top
@@ -137,15 +135,20 @@ unignore lines:
 unhdr_order *
   hdr_order message-id: in-reply-to: references: path: received: date: expiry-date: nntp-posting-host: sender return-path from from: organization: organisation: resent- reply-to: mail-followup-to: mail-copies-to: errors-to: to: cc: delivered-to: mailing-list: list- newsgroups: followup-to: subject: importance: status: precedence: old- content- mime- x- user-agent: lines:
 
+# alerts
+set new_mail_command="notify-send -i /usr/share/icons/gnome/24x24/emblems/emblem-mail.png 'New Email in %f' '%n new messages, %u unread.' &"
+
 # source some important files - default profile
 source ~/.mutt/default/attachments
 source ~/.mutt/default/bindings
 source ~/.mutt/default/colors
 source ~/.mutt/default/hooks
-#source ~/.mutt/default/sidebar
+source ~/.mutt/default/sidebar
 source ~/.mutt/default/macros
 source ~/.mutt/default/pgp
 source ~/.mutt/default/score
 
 # show version on startup
 exec show-version
+
+# vim:ft=muttrc:

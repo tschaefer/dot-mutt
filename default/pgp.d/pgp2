@@ -11,3 +11,5 @@ set pgp_verify_key_command = "pgp -kcc +language=mutt %r" # verify a key
 set pgp_list_pubring_command = "pgpring -2 %r" # read in the public key ring
 set pgp_list_secring_command = "pgpring -s -2 %r" # read in the secret key ring
 set pgp_good_sign = "Good signature" # pattern for good signature
+
+# vim:ft=muttrc:

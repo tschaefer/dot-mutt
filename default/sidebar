@@ -1,6 +1,8 @@
-# Thomas Merkel <tm@core.io>
+  set sidebar_visible
+  set sidebar_width = 24
+  set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
+  set sidebar_delim_chars = '/.'
+  set sidebar_short_path = no
+  set mail_check_stats
 
-# these only work with the sidebar patch
-set sidebar_delim=" "                           # separate
-set sidebar_visible=no                          # yep
-set sidebar_width=24                            # enough for me
+# vim:ft=muttrc:

@@ -1,8 +1,3 @@
-# Thomas Merkel <tm@core.io>
-
-# inspired by ideas of (at least):
-# - Wolfram Schlich <wolfram@schlich.org>
-
 # generic
 unset pgp_autosign
 unset pgp_autoencrypt
@@ -24,3 +19,5 @@ unset pgp_retainable_sigs
 
 # source the more detailed stuff according to your pgp type/version
 source ~/.mutt/default/pgp.d/gpg # || pgp(2|5|6)
+
+# vim:ft=muttrc:

@@ -1,7 +1,3 @@
-# vim: filetype=muttrc
-
-#
-#
 # make sure that you are using mutt linked against slang, not ncurses, or
 # suffer the consequences of weird color issues. use "mutt -v" to check this.
 
@@ -149,3 +145,4 @@ color body          red             default         "([a-z][a-z0-9+-]*://(((([a-
 #folder-hook gmail/inbox        "color status        J_black         yellow          "
 #folder-hook gmail/important    "color status        J_black         yellow          "
 
+# vim:ft=muttrc:
