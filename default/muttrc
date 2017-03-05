@@ -55,8 +55,9 @@ unset ignore_linear_white_space
 unset metoo
   set menu_scroll
   set mime_forward = ask-no
-unset mime_forward_decode  
+unset mime_forward_decode
 unset move
+  set new_mail_command="notify-send -i /usr/share/icons/gnome/24x24/emblems/emblem-mail.png 'New Email in %f' '%n new messages, %u unread.' &"
   set pager = builtin
   set pager_context = 5
   set pager_index_lines = `((stty size 2>/dev/null || echo 24 80); echo s0 5/1+p) | dc`
@@ -127,16 +128,7 @@ alternative_order text/plain text/enriched text/html text/calendar
 
 # headers in the pager
   ignore *
-unignore from: date: subject: to: cc: message-id: in-reply-to: user-agent: resent- reply-to: mail-followup-to:
-unignore newsgroups: references: posted-to: followup-to: nntp-posting-host:
-unignore organization: organisation: x-
-unignore lines:
-# ignore x-status: x-uidl: x-attribution: x-authentication-warning: x-mime: x-msmail-priority: x-priority:
-unhdr_order *
-  hdr_order message-id: in-reply-to: references: path: received: date: expiry-date: nntp-posting-host: sender return-path from from: organization: organisation: resent- reply-to: mail-followup-to: mail-copies-to: errors-to: to: cc: delivered-to: mailing-list: list- newsgroups: followup-to: subject: importance: status: precedence: old- content- mime- x- user-agent: lines:
-
-# alerts
-set new_mail_command="notify-send -i /usr/share/icons/gnome/24x24/emblems/emblem-mail.png 'New Email in %f' '%n new messages, %u unread.' &"
+unignore from: date: subject: to: cc:
 
 # source some important files - default profile
 source ~/.mutt/default/attachments
