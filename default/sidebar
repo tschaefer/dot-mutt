@@ -1,12 +1,12 @@
   set mail_check_stats
   set sidebar_delim_chars = '/.'
-  set sidebar_divider_char = '|'
+  set sidebar_divider_char = ''
   set sidebar_folder_indent
   set sidebar_format = "%B%?F? [%F]?%* %?N?%N/?%S"
   set sidebar_indent_string = '  '
 unset sidebar_new_mail_only
 unset sidebar_next_new_wrap
-  set sidebar_on_right
+unset sidebar_on_right
   set sidebar_short_path
   set sidebar_sort_method = unsorted
   set sidebar_visible
