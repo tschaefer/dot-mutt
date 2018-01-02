@@ -1,6 +1,7 @@
 ##
 ## mailbox/newsgroup navigation (default)
 ##
+bind pager - noop
 macro index <left> "<change-folder>?<toggle-mailboxes>" "show mailboxes"
 macro index -<left> "<change-newsgroup>?" "show newsgroups"
 macro index -I "<change-folder>!<enter>" "go to INBOX"
