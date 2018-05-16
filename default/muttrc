@@ -57,7 +57,7 @@ unset metoo
   set mime_forward = ask-no
 unset mime_forward_decode
 unset move
-  set new_mail_command="notify-send -i /usr/share/icons/gnome/24x24/emblems/emblem-mail.png 'New Email in %f' '%n new messages, %u unread.' &"
+# set new_mail_command="notify-send -i /usr/share/icons/gnome/24x24/emblems/emblem-mail.png 'New Email in %f' '%n new messages, %u unread.' &"
   set pager = builtin
   set pager_context = 5
   set pager_index_lines = `((stty size 2>/dev/null || echo 24 80); echo s0 5/1+p) | dc`
