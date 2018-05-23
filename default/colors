@@ -17,17 +17,10 @@ mono indicator reverse
 mono error bold
 
 ### index
-#color index red default "~D(!~p|~p)" # deleted
-#color index black default ~F # flagged
-#color index red default ~= # duplicate 
-#color index green default "~A!~N!~T!~p!~Q!~F!~D!~P" # the rest
-#color index J_base default "~A~N!~T!~p!~Q!~F!~D" # the rest, new
-#color index red default "~A" # all
 color index red default "~E" # expired
 color index blue default "~N" # new
 color index blue default "~O" # old
 color index magenta default "~Q" # replied
-#color index green default "~R" # read
 color index blue default "~U" # unread
 color index blue default "~U~$" # unread, unreferenced
 color index yellow default "~v" # part of a collapsed thread
@@ -51,10 +44,6 @@ color index green black "~N~v~(~F~N)" # collapsed thread with unread parent & fl
 color index green black "~N~v~(~F)" # collapsed thread with unread parent, no unread inside, but some flagged
 color index cyan black "~v~(~p)" # collapsed thread with unread parent, no unread inside, some to me directly
 color index yellow red "~v~(~D)" # thread with deleted (doesn't differentiate between all or partial)
-#color index yellow default "~(~N)" # in threads with some unread
-#color index green default "~S" # superseded
-#color index red default "~T" # tagged
-#color index red red "~=" # duplicated
 
 ### headers
 color hdrdefault magenta default

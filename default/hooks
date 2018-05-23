@@ -43,31 +43,6 @@ folder-hook '!' " \
 folder-hook \=Sent " \
       set sort = date-sent "
 
-# Lists
-folder-hook +.lists.* " \
-    unset autoedit; \
-    unset recall; \
-      set sort = threads; \
-      set sort_aux = date-sent "
-
-# People
-folder-hook +.people* " \
-      set sort = threads; \
-      set sort_aux = date-sent "
-
-##
-## NNTP patch
-##
-# nntp://*
-folder-hook nntp://.* " \
-      set record = +.Posted; \
-      set sort = threads; \
-      set sort_aux = date-received "
-
-# Posted
-folder-hook +.Posted " \
-      set sort = date-sent "
-
 # message hooks
 message-hook . "set mime_forward = ask-no"
 message-hook "~h multipart" "set mime_forward = ask-yes"

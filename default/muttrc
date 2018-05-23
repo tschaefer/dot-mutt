@@ -16,18 +16,14 @@ unset bounce_delivered
   set confirmcreate
   set copy
   set delete = ask-yes
-# set display_filter = "tr '\015' ' '"
-# set dotlock_program = /usr/bin/mutt_dotlock
   set dsn_notify = "failure,delay" # RFC1894
   set dsn_return = "hdrs"
   set editor = "vim +'set textwidth=70' +'set nohls'"
   set edit_headers
   set envelope_from
-# set escape = "~"
   set fast_reply
   set fcc_attach        # save fcc attachments along with the body
 unset fcc_clear            # save fcc crypted and signed (if applicable)
-# set folder = ~/.maildir
   set followup_to
 unset forward_decode
 unset forward_decrypt
@@ -44,12 +40,9 @@ unset ignore_linear_white_space
   set implicit_autoview
   set include
   set indent_string = "> "
-# set locale = "de_DE"
   set mail_check = 5
   set mailcap_path = "~/.mutt/default/mailcap"
-# set mailcap_sanitize
   set mark_old
-#ifdef mark_macro_prefix set mark_macro_prefix = \\\'
   set mbox = !
   set mbox_type = Maildir
 unset metoo
@@ -57,7 +50,6 @@ unset metoo
   set mime_forward = ask-no
 unset mime_forward_decode
 unset move
-# set new_mail_command="notify-send -i /usr/share/icons/gnome/24x24/emblems/emblem-mail.png 'New Email in %f' '%n new messages, %u unread.' &"
   set pager = builtin
   set pager_context = 5
   set pager_index_lines = `((stty size 2>/dev/null || echo 24 80); echo s0 5/1+p) | dc`
@@ -98,8 +90,6 @@ unset sort_re
 unset suspend
   set thorough_search
   set to_chars = " +TCFL"
-## cd's trash patch
-#ifdef trash set trash = +.INBOX.Trash
   set uncollapse_jump
 unset use_8bitmime
   set use_domain
@@ -117,7 +107,6 @@ unset wait_key
   set date_format = "!%a, %b %d, %Y at %I:%M:%S%p %Z"
   set folder_format = "%3C %12d %4N %-40f %> Z:%10sb"
   set forward_format = "[Fwd: %s]"
-#  set index_format = "%4C %Z %4N %[!%Y-%m-%d %H:%M] %-25.25F %s %> %?y?[%y]? A:%?X?%2X&  ? L:%5l Z:%5c"
   set index_format = "%4C %Z %[!%Y-%m-%d %H:%M] %-25.25F %s %> %?y?[%y]?"
   set pager_format = "-%Z- %C/%m: %-20.20n %s"
   set status_format = "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"

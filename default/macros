@@ -3,15 +3,12 @@
 ##
 bind pager - noop
 macro index <left> "<change-folder>?<toggle-mailboxes>" "show mailboxes"
-macro index -<left> "<change-newsgroup>?" "show newsgroups"
-#macro index -I "<change-folder>!<enter>" "go to INBOX"
-#macro pager -I "<change-folder>!<enter>" "go to INBOX"
-#macro index -S "<change-folder>Sent<enter>" "go to Sent"
-#macro pager -S "<change-folder>Sent<enter>" "go to Sent"
-#macro index -A "<change-folder>?<change-dir>^U~/mail.archive<enter>" "go to archive index"
-#macro pager -A "<change-folder>?<change-dir>^U~/mail.archive<enter>" "go to archive index"
 macro index S "<save-message>?<toggle-mailboxes>" "save-message into mailbox"
 macro pager S "<save-message>?<toggle-mailboxes>" "save-message into mailbox"
+macro index g "<group-reply>" "group-reply"
+macro pager g "<group-reply>" "group-reply"
+macro index r "<reply><enter>" "reply to a message"
+macro pager r "<reply><enter>" "reply to a message"
 
 ##
 ## sidebar
@@ -28,52 +25,6 @@ macro index J  ":push <sidebar-next><sidebar-open><enter>"
 ##
 macro index p "<display-toggle-weed><print-message><display-toggle-weed>"
 macro pager p "<display-toggle-weed><print-message><display-toggle-weed>"
-
-##
-## unwanted mail (black-/whitelist + bayesian spam filtering)
-##
-# add address/domain to...
-# ...whitelist
-#macro index <f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist"<enter> "add address to whitelist"
-#macro pager <f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist"<enter> "add address to whitelist"
-#macro index <esc><f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist --domain"<enter> "add domain of address to whitelist"
-#macro pager <esc><f11> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/whitelist --domain"<enter> "add domain of address to whitelist"
-## ...blacklist and save mail in =.SPAM
-#macro index <f12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist"<enter><save-message>=.SPAM<enter> "add address to blacklist and save mail in =.SPAM"
-#macro pager <f12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist"<enter><save-message>=.SPAM<enter> "add address to blacklist and save mail in =.SPAM"
-#macro index <esc><F12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist --domain"<enter><save-message>=.SPAM<enter> "add domain of address to blacklist and save mail in =.SPAM"
-#macro pager <esc><F12> <pipe-message>"~/.procmail/bin/get_from.pl >>~/.procmail/filter/blacklist --domain"<enter><save-message>=.SPAM<enter> "add domain of address to blacklist and save mail in =.SPAM"
-## editing these files
-#macro index <f9> "<shell-escape>${EDITOR} ~/.procmail/filter/whitelist<enter>" "edit whitelist"
-#macro pager <f9> "<shell-escape>${EDITOR} ~/.procmail/filter/whitelist<enter>" "edit whitelist"
-#macro index <f10> "<shell-escape>${EDITOR} ~/.procmail/filter/blacklist<enter>" "edit blacklist"
-#macro pager <f10> "<shell-escape>${EDITOR} ~/.procmail/filter/blacklist<enter>" "edit blacklist"
-
-##
-## SpamAssassin
-##
-#macro index ,n "<pipe-entry>sa-learn --ham<enter>" "(re-)classify message as non-spam"
-#macro pager ,n "<pipe-entry>sa-learn --ham<enter>" "(re-)classify message as non-spam"
-#macro index ,s "<pipe-entry>sa-learn --spam<enter>" "(re-)classify message as spam"
-#macro pager ,s "<pipe-entry>sa-learn --spam<enter>" "(re-)classify message as spam"
-#macro index r "<pipe-entry>sa-learn --ham<enter><reply>" "reply (and classify as non-spam)"
-#macro pager r "<pipe-entry>sa-learn --ham<enter><reply>" "reply (and classify as non-spam)"
-#macro index g "<pipe-entry>sa-learn --ham<enter><group-reply>" "group-reply (and classify as non-spam)"
-#macro pager g "<pipe-entry>sa-learn --ham<enter><group-reply>" "group-reply (and classify as non-spam)"
-#macro index l "<pipe-entry>sa-learn --ham<enter><list-reply>" "list-reply (and classify as non-spam)"
-#macro pager l "<pipe-entry>sa-learn --ham<enter><list-reply>" "list-reply (and classify as non-spam)"
-#macro index X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
-#macro pager X "<pipe-entry>sa-learn --spam<enter><delete-message>" "delete-message (and classify as spam)"
-macro index X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
-macro pager X "<save-message>=INBOX.Junk<enter>" "classify as spam and move to =INBOX.Junk"
-#ifdef purge-message 'macro index X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
-#ifdef purge-message 'macro pager X "<pipe-entry>sa-learn --spam<enter><purge-message>" "purge-message (and classify as spam)"'
-
-
-macro index g "<group-reply>" "group-reply"
-macro pager g "<group-reply>" "group-reply"
-macro index r "<reply><enter>" "reply to a message"
-macro pager r "<reply><enter>" "reply to a message"
 
 ##
 ## some gpg macros
@@ -95,7 +46,6 @@ macro pager <f5> "<enter-command>source ~/.mutt/muttrc<enter>" "reload muttrc"
 ##
 macro index <esc>r "<tag-pattern>~N | ~O<enter><tag-prefix><clear-flag>N<tag-prefix><untag-pattern>.<enter>" "mark all messages as read"
 macro pager <esc>r "<tag-pattern>~N | ~O<enter><tag-prefix><clear-flag>N<tag-prefix><untag-pattern>.<enter>" "mark all messages as read"
-# enable the resolve setting when (un)deleting messages (disabled by default in my config)
 macro index d "<enter-command>set resolve<enter><delete-message><enter-command>unset resolve<enter>" "delete-message"
 macro pager d "<enter-command>set resolve<enter><delete-message><enter-command>unset resolve<enter>" "delete-message"
 macro index u "<enter-command>set resolve<enter><undelete-message><enter-command>unset resolve<enter>" "undelete-message"
