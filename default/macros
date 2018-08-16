@@ -85,4 +85,9 @@ macro pager ,L "<edit-label>\Cu<enter>" "clear x-label"
 macro index ,T "<edit-label>TODO<enter>" "set x-label to 'TODO'"
 macro pager ,T "<edit-label>TODO<enter>" "set x-label to 'TODO'"
 
+##
+## affecting the index
+##
+macro attach ,F "<pipe-message>~/.mutt/bin/firepipe.pl<enter>" "view message with firefox"
+
 # vim:ft=muttrc:
