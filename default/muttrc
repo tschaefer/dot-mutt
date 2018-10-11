@@ -60,8 +60,8 @@ unset pipe_decode
 unset post_indent_string
   set postpone = ask-no
   set postponed = +.Postponed
-  set print = yes
-  set print_command = "muttprint"
+  set print = ask-yes
+  set print_command = 'set -e; f=`mktemp`; muttprint -F Helvetica -P A4 -p TO_FILE:"$f"; ps2pdf "$f" "${f}.pdf"; rm "$f"'
   set print_split
   set query_command = "abook --mutt-query '%s'"
   set quit = yes
