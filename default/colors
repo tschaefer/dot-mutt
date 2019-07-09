@@ -1,5 +1,5 @@
 ### basic
-color normal black default
+color normal default default
 color error red default
 color tilde black default
 color message white default
