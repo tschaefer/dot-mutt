@@ -16,7 +16,7 @@ source "gpg2 -dq ~/.mutt/profile/passwords.gpg |"
   set record = "imap://imap.blackox.org/Sent"
   set postponed = "imap://imap.blackox.org/Drafts"
   set trash = "imap://imap.blackox.org/Trash"
-  mailboxes =INBOX =Debian =Gentoo =Drafts =Sent =Trash
+  mailboxes =INBOX =Debian =Gentoo =TCEC =Drafts =Sent =Trash
 
   set move = no
 
