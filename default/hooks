@@ -28,7 +28,6 @@ folder-hook . " \
       set recall = ask-no; \
       set record = "=Sent"; \
       set sort = date-sent; \
-    unset sort_aux; \
       set timeout = 30 "
 
 # INBOX
@@ -36,7 +35,6 @@ folder-hook '!' " \
       set sort = threads; \
       set strict_threads = yes ; \
       set sort_browser = reverse-date ; \
-      set sort_aux = last-date-received; \
       set timeout = 5 "
 
 # Sent
