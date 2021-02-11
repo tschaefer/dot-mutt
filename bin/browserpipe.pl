@@ -13,13 +13,13 @@ sub run {
     croak("Ooops.\n") if ( !defined $pid );
 
     if ( $pid == 0 ) {
-        my ( $fh, $file ) = tempfile( "mutt.XXXXX", TMPDIR => 1, UNLINK => 1 );
+        my ( $fh, $file ) = tempfile( "mutt.XXXXX", TMPDIR => 1, UNLINK => 1, SUFFIX => '.html' );
         while (<>) {
             print {$fh} $_;
         }
         close $fh or croak("Ooops.\n");
 
-        system "firefox " . $file;
+        system "sensible-browser " . $file;
         sleep 1;
     }
 
